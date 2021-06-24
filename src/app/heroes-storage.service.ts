@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 
 const storageName = 'heroes_list';
@@ -9,7 +8,7 @@ export class HeroesStorageService {
   heroList;
 
   constructor() {
-    this.heroList = JSON.parse(localStorage.getItem(storageName));
+    this.heroList = HEROES;
   }
 
   // get heroes
