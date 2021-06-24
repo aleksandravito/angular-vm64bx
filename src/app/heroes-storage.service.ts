@@ -8,16 +8,18 @@ export class HeroesStorageService {
   heroList;
 
   constructor() {
-    if (localStorage.getItem(storageName) === null) {
-      this.heroList = HEROES;
-    } else {
-      this.heroList = JSON.parse(localStorage.getItem(storageName));
-    }
+    console.dir(localStorage.length);
+    // if (localStorage.getItem(storageName) === null) {
+    this.heroList = HEROES;
+    // }
+    // else {
+    //   this.heroList = JSON.parse(localStorage.getItem(storageName));
+    // }
   }
 
   // get heroes
   get() {
-    return this.heroList;
+    return [...this.heroList];
   }
 
   // update an hero
