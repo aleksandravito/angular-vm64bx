@@ -12,12 +12,12 @@ export class HeroesStorageService {
     this.heroList = JSON.parse(localStorage.getItem(storageName)) || HEROES;
   }
 
-  // get items
+  // get heroes
   get() {
     return this.heroList;
   }
 
-  // update an item
+  // update an hero
   put(item: any, changes: any) {
     Object.assign(this.heroList[this.findItemIndex(item)], changes);
     return this.update();
