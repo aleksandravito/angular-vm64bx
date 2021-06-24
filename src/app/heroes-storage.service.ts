@@ -13,7 +13,7 @@ const HEROES = [
   { id: 17, name: 'Dynama' },
   { id: 18, name: 'Dr IQ' },
   { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+  { id: 20, name: 'Tornada' }
 ];
 
 @Injectable()
@@ -21,7 +21,7 @@ export class HeroesStorageService {
   private heroList;
 
   constructor() {
-    this.heroList = HEROES;
+    this.heroList = JSON.parse(localStorage.getItem(storageName)) || HEROES;
   }
 
   // get items
