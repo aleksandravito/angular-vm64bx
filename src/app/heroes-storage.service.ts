@@ -13,7 +13,7 @@ const HEROES = [
   { id: 17, name: 'Dynama' },
   { id: 18, name: 'Dr IQ' },
   { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornada' }
+  { id: 20, name: 'Torn' }
 ];
 
 @Injectable()
@@ -21,7 +21,7 @@ export class HeroesStorageService {
   private heroList;
 
   constructor() {
-    this.heroList = JSON.parse(localStorage.getItem(storageName)) || HEROES;
+    this.heroList = HEROES;
   }
 
   // get items
@@ -29,19 +29,19 @@ export class HeroesStorageService {
     return this.heroList;
   }
 
-  // // update an item
-  // put(item, changes) {
-  //   Object.assign(this.heroList[this.findItemIndex(item)], changes);
-  //   return this.update();
-  // }
+  // update an item
+  put(item: any, changes: any) {
+    Object.assign(this.heroList[this.findItemIndex(item)], changes);
+    return this.update();
+  }
 
-  // private update() {
-  //   localStorage.setItem(storageName, JSON.stringify(this.heroList));
+  private update() {
+    localStorage.setItem(storageName, JSON.stringify(this.heroList));
 
-  //   return this.get();
-  // }
+    return this.get();
+  }
 
-  // private findItemIndex(item) {
-  //   return this.heroList.indexOf(item);
-  // }
+  private findItemIndex(item: any) {
+    return this.heroList.indexOf(item);
+  }
 }

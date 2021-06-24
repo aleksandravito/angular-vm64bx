@@ -13,8 +13,9 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit() {}
 
-  getTodoList() {
-    return this.storage.get();
+  save(hero: Hero) {
+    localStorage.setItem('myData', 'test');
+    // return this.storage.put(this.storage, hero);
   }
 }
 
