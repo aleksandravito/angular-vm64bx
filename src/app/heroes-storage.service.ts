@@ -9,7 +9,7 @@ export class HeroesStorageService {
   heroList;
 
   constructor() {
-    this.heroList = JSON.parse(localStorage.getItem(storageName)) || HEROES;
+    this.heroList = JSON.parse(localStorage.getItem(storageName));
   }
 
   // get heroes
