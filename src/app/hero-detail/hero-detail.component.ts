@@ -14,10 +14,10 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit() {}
 
   save(hero: Hero) {
-    return this.storage.put(hero, hero);
+    // return this.storage.put(hero, hero);
     // console.log(this.storage.heroList.indexOf(hero));
     // console.log(this.storage.heroList);
-    // console.log(typeof localStorage.getItem('heroes_list'));
+    console.log(hero);
   }
 }
 
