@@ -16,7 +16,7 @@ export class HeroesComponent implements OnInit {
   constructor(private storage: HeroesStorageService) {}
 
   ngOnInit() {
-    this.storage.get();
+    this.heroes = this.storage.get();
   }
 
   onSelect(hero: Hero): void {

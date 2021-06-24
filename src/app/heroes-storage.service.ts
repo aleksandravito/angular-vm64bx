@@ -21,27 +21,27 @@ export class HeroesStorageService {
   private heroList;
 
   constructor() {
-    this.heroList = localStorage.setItem(storageName, JSON.stringify(HEROES));
+    this.heroList = HEROES;
   }
 
   // get items
   get() {
-    return [...this.heroList];
+    return this.heroList;
   }
 
-  // update an item
-  put(item, changes) {
-    Object.assign(this.heroList[this.findItemIndex(item)], changes);
-    return this.update();
-  }
+  // // update an item
+  // put(item, changes) {
+  //   Object.assign(this.heroList[this.findItemIndex(item)], changes);
+  //   return this.update();
+  // }
 
-  private update() {
-    localStorage.setItem(storageName, JSON.stringify(this.heroList));
+  // private update() {
+  //   localStorage.setItem(storageName, JSON.stringify(this.heroList));
 
-    return this.get();
-  }
+  //   return this.get();
+  // }
 
-  private findItemIndex(item) {
-    return this.heroList.indexOf(item);
-  }
+  // private findItemIndex(item) {
+  //   return this.heroList.indexOf(item);
+  // }
 }
