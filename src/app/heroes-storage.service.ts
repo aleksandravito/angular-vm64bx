@@ -10,7 +10,6 @@ export class HeroesStorageService {
   storage = localStorage.getItem(storageName);
 
   constructor() {
-    localStorage.clear();
     if (typeof this.storage === 'string') {
       this.heroList = JSON.parse(this.storage);
     } else {
