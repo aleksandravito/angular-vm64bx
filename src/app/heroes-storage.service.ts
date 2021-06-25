@@ -12,8 +12,10 @@ export class HeroesStorageService {
   constructor() {
     if (typeof this.storage === 'string') {
       this.heroList = JSON.parse(this.storage);
+      console.dir('tamam', this.heroList);
     } else {
       this.heroList = HEROES;
+      console.dir('jo tamam', this.heroList);
     }
   }
 
