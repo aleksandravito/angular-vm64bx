@@ -15,9 +15,6 @@ export class HeroDetailComponent implements OnInit {
 
   save(hero: Hero) {
     return this.storage.put(hero, hero);
-    // console.log(this.storage.heroList.indexOf(hero));
-    // console.log(this.storage.heroList);
-    // console.log(typeof hero);
   }
 }
 
