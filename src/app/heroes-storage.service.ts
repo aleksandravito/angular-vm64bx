@@ -6,12 +6,14 @@ const storageName = 'heroeslist';
 
 @Injectable()
 export class HeroesStorageService {
-  heroList? = HEROES;
+  heroList;
   storage = localStorage.getItem(storageName);
 
   constructor() {
     if (typeof this.storage === 'string') {
       this.heroList = JSON.parse(this.storage);
+    } else {
+      this.heroList = HEROES;
     }
   }
 
