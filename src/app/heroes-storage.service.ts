@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 
 const storageName = 'heroeslist';
 
 @Injectable()
 export class HeroesStorageService {
-  heroList;
+  heroList = HEROES;
+  storage = localStorage.getItem(storageName);
 
   constructor() {
-    console.dir(localStorage.length);
-    // if (localStorage.getItem(storageName) === null) {
-    this.heroList = HEROES;
-    // }
-    // else {
-    //   this.heroList = JSON.parse(localStorage.getItem(storageName));
-    // }
+    if (typeof this.storage === 'string') {
+      this.heroList = JSON.parse(this.storage);
+    }
   }
 
   // get heroes
